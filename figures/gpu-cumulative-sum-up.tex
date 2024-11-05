@@ -1,0 +1,49 @@
+\begin{tikzpicture}
+    \matrix[matrix of math nodes,column sep=0em,row
+    sep=0.5em,
+    row 1/.style={nodes={rectangle,draw=gray!20,fill=gray!10,minimum width=1em,  minimum height=1em, text width=4em, align=center, rounded corners, inner sep=0pt}},
+    row 2/.style={nodes={rectangle,draw=white,minimum width=0.5em,  minimum height=0.5em, text width=0.5em, align=center, rounded corners, inner sep=0pt}},
+    row 3/.style={nodes={rectangle,draw=gray!40,fill=gray!20,minimum width=1em,  minimum height=1em, text width=4em, align=center, rounded corners, inner sep=0pt}},
+    row 4/.style={nodes={rectangle,draw=white,minimum width=0.5em,  minimum height=0.5em, text width=0.5em, align=center, rounded corners, inner sep=0pt}},
+    row 5/.style={nodes={rectangle,draw=gray!40,fill=gray!20,minimum width=1em,  minimum height=1em, text width=4em, align=center, rounded corners, inner sep=0pt}},
+    row 6/.style={nodes={rectangle,draw=white,minimum width=0.5em,  minimum height=0.5em, text width=0.5em, align=center, rounded corners, inner sep=0pt}},
+    row 7/.style={nodes={rectangle,draw=gray!40,fill=gray!20,minimum width=1em,  minimum height=1em, text width=4em, align=center, rounded corners, inner sep=0pt}}] (m) {
+      |(a_1)| 3 & |(a_2)| 1 & |(a_3)| 7 & |(a_4)| 0 & |(a_5)| 4 & |(a_6)| 1 & |(a_7)| 6 & |(a_8)| 3 \\
+      %
+      & |(b_2)| \Moplus &  & |(b_4)| \Moplus &  & |(b_6)| \Moplus &  & |(b_8)| \Moplus\\
+      %
+      |(c_1)| 3 & |(c_2)| \textcolor{blue}{4} & |(c_3)| 7 & |(c_4)| \textcolor{blue}{7} & |(c_5)| 4 & |(c_6)| \textcolor{blue}{5} & |(c_7)| 6 & |(c_8)| \textcolor{blue}{9} \\
+       %
+        &  &  & |(d_4)| \Moplus &  &  &  & |(d_8)| \Moplus\\
+        %
+        |(e_1)| 3 & |(e_2)| 4 & |(e_3)| 7 & |(e_4)| \textcolor{blue}{11} & |(e_5)| 4 & |(e_6)| 5 & |(e_7)| 6 & |(e_8)| \textcolor{blue}{14} \\
+        %
+        &  &  &  &  &  &  & |(f_8)| \Moplus\\
+        %
+        |(g_1)| 3 & |(g_2)| 4 & |(g_3)| 7 & |(g_4)| 11 & |(g_5)| 4 & |(g_6)| 5 & |(g_7)| 6 & |(g_8)| \textcolor{blue}{25} \\
+        };
+       %
+      \begin{scope}[every node/.style={font=\small\itshape}]
+          \draw[->, thick] (a_1) to [bend right, looseness=0.5] (b_2);
+          \draw[->, thick] (a_2) -- (b_2);
+          \draw[->, thick] (a_3) to [bend right, looseness=0.5] (b_4);
+          \draw[->, thick] (a_4) -- (b_4);
+          \draw[->, thick] (a_5) to [bend right, looseness=0.5] (b_6);
+          \draw[->, thick] (a_6) -- (b_6);
+          \draw[->, thick] (a_7) to [bend right, looseness=0.5] (b_8);
+          \draw[->, thick] (a_8) -- (b_8);
+          \draw[->, thick] (b_2) -- (c_2);
+          \draw[->, thick] (b_4) -- (c_4);
+          \draw[->, thick] (b_6) -- (c_6);
+          \draw[->, thick] (b_8) -- (c_8);
+          \draw[->, thick] (c_2) to [bend right, looseness=0.5] (d_4);
+          \draw[->, thick] (c_4) -- (d_4);
+          \draw[->, thick] (c_6) to [bend right, looseness=0.5] (d_8);
+          \draw[->, thick] (c_8) -- (d_8);
+          \draw[->, thick] (d_4) -- (e_4);
+          \draw[->, thick] (d_8) -- (e_8);
+          \draw[->, thick] (e_4) to [bend right, looseness=0.2] (f_8);
+          \draw[->, thick] (e_8) -- (f_8);
+          \draw[->, thick] (f_8) -- (g_8);
+      \end{scope}
+\end{tikzpicture}

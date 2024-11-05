@@ -1,0 +1,14 @@
+\begin{tikzpicture}[>=stealth,->,shorten >=2pt,looseness=2,auto]
+    \matrix[matrix of math nodes,column sep=0em,row
+    sep=4em,cells={nodes={rectangle,draw=gray!80,  fill=gray!40,minimum width=1em,  minimum height=1em, text width=5em, align=center, rounded corners, inner sep=0pt}}] (m) {
+      |(a_1)| 3 & |(a_2)| 4 & |(a_3)| 11 & |(a_4)| 11 & |(a_5)| 15 & |(a_6)| 16 & |(a_7)| 22 & |(a_8)| 25 \\};
+      \begin{scope}[every node/.style={font=\small\itshape}]
+          \draw[thick] (a_1) to [bend right] node [below] {$3 + 1$} (a_2);
+          \draw[thick] (a_2) to [bend right] node [below] {$4 + 7$} (a_3);
+          \draw[thick] (a_3) to [bend right] node [below] {$11 + 0$} (a_4);
+          \draw[thick] (a_4) to [bend right] node [below] {$11 + 4$} (a_5);
+          \draw[thick] (a_5) to [bend right] node [below] {$15 + 1$} (a_6);
+          \draw[thick] (a_6) to [bend right] node [below] {$16 + 6$} (a_7);
+          \draw[thick] (a_7) to [bend right] node [below] {$22 + 3$} (a_8);
+      \end{scope}
+\end{tikzpicture}

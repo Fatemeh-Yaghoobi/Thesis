@@ -1,0 +1,62 @@
+\begin{tikzpicture}
+    \matrix[matrix of math nodes,column sep=0em,row
+    sep=0.5em,
+    row 1/.style={nodes={rectangle,draw=gray!40,fill=gray!20,minimum width=1em,  minimum height=1em, text width=4em, align=center, rounded corners, inner sep=0pt}},
+    row 2/.style={nodes={rectangle,draw=white,minimum width=0.5em,  minimum height=0.5em, text width=0.5em, align=center, rounded corners, inner sep=0pt}},
+    row 3/.style={nodes={rectangle,draw=gray!40,fill=gray!20,minimum width=1em,  minimum height=1em, text width=4em, align=center, rounded corners, inner sep=0pt}},
+    row 4/.style={nodes={rectangle,draw=white,minimum width=0.5em,  minimum height=0.5em, text width=0.5em, align=center, rounded corners, inner sep=0pt}},
+    row 5/.style={nodes={rectangle,draw=gray!40,fill=gray!20,minimum width=1em,  minimum height=1em, text width=4em, align=center, rounded corners, inner sep=0pt}},
+    row 6/.style={nodes={rectangle,draw=white,minimum width=0.5em,  minimum height=0.5em, text width=0.5em, align=center, rounded corners, inner sep=0pt}},
+    row 7/.style={nodes={rectangle,draw=gray!80,fill=gray!40,minimum width=1em,  minimum height=1em, text width=4em, align=center, rounded corners, inner sep=0pt}}] (m) {
+      |(a_1)| 3 & |(a_2)| 4 & |(a_3)| 7 & |(a_4)| 11 & |(a_5)| 4 & |(a_6)| 5 & |(a_7)| 6 & |(a_8)| 0 \\
+      %
+      &  &  &  &  &  &  & |(b_8)| \Moplus\\
+      %
+      |(c_1)| 3 & |(c_2)| 4 & |(c_3)| 7 & |(c_4)| \textcolor{blue}{0} & |(c_5)| 4 & |(c_6)| 5 & |(c_7)| 6 & |(c_8)| \textcolor{blue}{11} \\
+       %
+        &  &  & |(d_4)| \Moplus &  &  &  & |(d_8)| \Moplus\\
+        %
+        |(e_1)| 3 & |(e_2)| \textcolor{blue}{0} & |(e_3)| 7 & |(e_4)| \textcolor{blue}{4} & |(e_5)| 4 & |(e_6)| \textcolor{blue}{11} & |(e_7)| 6 & |(e_8)| \textcolor{blue}{16} \\
+        %
+        & |(f_2)| \Moplus &  &  |(f_4)| \Moplus&  &  |(f_6)| \Moplus&  & |(f_8)| \Moplus\\
+        %
+        |(g_1)| \textcolor{blue}{0} & |(g_2)| \textcolor{blue}{3} & |(g_3)| \textcolor{blue}{4} & |(g_4)| \textcolor{blue}{11} & |(g_5)| \textcolor{blue}{11} & |(g_6)| \textcolor{blue}{15} & |(g_7)| \textcolor{blue}{16} & |(g_8)| \textcolor{blue}{22} \\
+        };
+       %
+      \begin{scope}[every node/.style={font=\small\itshape}]
+          \draw[->, thick] (a_4) to [bend right, looseness=0.2] (b_8);
+          \draw[->, thick] (a_8) to (b_8);
+          \draw[->, thick] (b_8) to (c_8);
+          \draw[->, thick, dashed] (a_8.south) to [bend right, looseness=0.1] (c_4.north);
+          %
+          \draw[->, thick] (c_2) to [bend right, looseness=0.2] (d_4);
+          \draw[->, thick] (c_4) to (d_4);
+          \draw[->, thick] (d_4) to (e_4);
+          \draw[->, thick, dashed] (c_4.south) to [bend right, looseness=0.1] (e_2.north);
+          %
+          \draw[->, thick] (c_6) to [bend right, looseness=0.2] (d_8);
+          \draw[->, thick] (c_8) to (d_8);
+          \draw[->, thick] (d_8) to (e_8);
+          \draw[->, thick, dashed] (c_8.south) to [bend right, looseness=0.1] (e_6.north);
+          %
+          \draw[->, thick] (e_1) to [bend right, looseness=0.2] (f_2);
+          \draw[->, thick] (e_2) to (f_2);
+          \draw[->, thick] (f_2) to (g_2);
+          \draw[->, thick, dashed] (e_2.south) to [bend right, looseness=0.1] (g_1.north);
+          %
+          \draw[->, thick] (e_3) to [bend right, looseness=0.2] (f_4);
+          \draw[->, thick] (e_4) to (f_4);
+          \draw[->, thick] (f_4) to (g_4);
+          \draw[->, thick, dashed] (e_4.south) to [bend right, looseness=0.1] (g_3.north);
+          %
+          \draw[->, thick] (e_5) to [bend right, looseness=0.2] (f_6);
+          \draw[->, thick] (e_6) to (f_6);
+          \draw[->, thick] (f_6) to (g_6);
+          \draw[->, thick, dashed] (e_6.south) to [bend right, looseness=0.1] (g_5.north);
+          %
+          \draw[->, thick] (e_7) to [bend right, looseness=0.2] (f_8);
+          \draw[->, thick] (e_8) to (f_8);
+          \draw[->, thick] (f_8) to (g_8);
+          \draw[->, thick, dashed] (e_8.south) to [bend right, looseness=0.1] (g_7.north);
+      \end{scope}
+\end{tikzpicture}

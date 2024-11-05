@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+\tikzstyle{arrow} = [thick,->,stealth[length=15mm]]
+\matrix[matrix of math nodes,column sep=2em,row
+sep=4em,cells={nodes={circle,draw,minimum width=3em,inner sep=0pt}},
+column 1/.style={nodes={rectangle, draw=none}},
+column 4/.style={nodes={rectangle, draw=none}},
+column 8/.style={nodes={rectangle,draw=none}},
+row 1 column 2/.style={nodes={circle,fill=gray!40,draw=black,very thick}},
+row 1 column 3/.style={nodes={circle,fill=gray!40,draw=black,very thick}},
+row 1 column 5/.style={nodes={circle,fill=gray!40,draw=black,very thick}},
+row 1 column 6/.style={nodes={circle,fill=gray!40,draw=black,very thick}},
+row 1 column 7/.style={nodes={circle,fill=gray!40,draw=black,very thick}},
+% row 1 column 9/.style={nodes={circle,fill=gray!40,draw=black,very thick}},
+row 2 column 3/.style={nodes={circle,fill=gray!10,draw=black,very thick}},
+row 2 column 5/.style={nodes={circle,fill=gray!10,draw=black,very thick}},
+row 2 column 6/.style={nodes={circle,fill=gray!10,draw=black,very thick}},
+row 2 column 7/.style={nodes={circle,fill=gray!10,draw=black,very thick}}] (m) {
+\textbf{Hidden states:} &
+  x_0 & x_1 & \ldots & x_{k-1} & x_k & x_{k+1} & \ldots  \\
+\textbf{Observations:}
+ & & y_1 & \ldots & y_{k-1} & y_k & y_{k+1}\\
+};
+\draw[->] (m-1-2) -- (m-1-3);
+\draw[->] (m-1-3) -- (m-1-4);
+\draw[->] (m-1-5) -- (m-1-6);
+\draw[->] (m-1-6) -- (m-1-7);
+\draw[->] (m-1-7) -- (m-1-8);
+% \draw[->] (m-1-8) -- (m-1-9);
+\draw[->] (m-1-3) -- (m-2-3);
+\draw[->] (m-1-5) -- (m-2-5);
+\draw[->] (m-1-6) -- (m-2-6);
+\draw[->] (m-1-7) -- (m-2-7);
+% \draw[->] (m-1-9) -- (m-2-9);
+\draw[->] (m-1-4) -- (m-1-5);
+\end{tikzpicture}
+
